@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOF INTERACT</title>
+
+  <style>
+    .reveal {
+      position: relative;
+      opacity: 0;
+    }
+
+    .reveal.active {
+      opacity: 1;
+    }
+
+    .active.fade-left {
+      animation: fade-left 1s ease-in;
+    }
+
+    @keyframes fade-left {
+      0% {
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .active.fade-right {
+      animation: fade-right 1s ease-in;
+    }
+
+    @keyframes fade-right {
+      0% {
+        transform: translateX(100px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .container-iframe {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding-top: 56.25%;
+      /* 16:9 Aspect Ratio */
+    }
+
+    .responsive-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="../img/LOGO6DOF5.png" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+  <div class="test1test" style="background-image: url('../img/LINE_ALBUM_2022.1.11_220407.jpg')">
+    <header class="header">
+
+      <div class="header-top">
+        <div class="container">
+
+
+        </div>
+      </div>
+
+      <div style="margin-top: -6px;" class="header-bottom " data-header>
+        <div class="container">
+
+          <div class="containerLeftHeader">
+            <div class="itemLeftLogo">
+              <img src="https://media.discordapp.net/attachments/862251208969289748/1120226497026867280/LOGO6DOF5.png?"
+                alt="">
+            </div>
+
+            <div class="itemRightNameLogo">
+              <h1
+                style="font-family: Kanit, sans-serif; font-size: 2.7rem;margin-right: 1rem;font-weight: 400; color:#e12728;">
+                DOF</h1>
+              <h1 style="font-family: Kanit, sans-serif; font-size: 2.7rem;font-weight: 400; color:#fff;">
+                INTERACT</h1>
+            </div>
+          </div>
+
+          <nav class="navbar" data-navbar>
+            <ul style="width: 100%;" class="navbar-list">
+
+              <li class="navbar-item">
+                <a href="index.html" class="navbar-link skewBg" data-nav-link>HOME</a>
+              </li>
+
+              <li class="navbar-item">
+                <a href="products.html" class="navbar-link skewBg" data-nav-link>PRODUCTS</a>
+              </li>
+
+              <li class="navbar-item">
+                <a href="about.html" class="navbar-link skewBg" data-nav-link>ABOUT</a>
+              </li>
+
+              <li class="navbar-item">
+                <a href="contact.html" class="navbar-link skewBg" data-nav-link>CONTACT</a>
+              </li>
+
+              <li class="navbar-item">
+                <a href="catalog.html" class="navbar-link skewBg" data-nav-link>CATALOG</a>
+              </li>
+
+              <!-- <li class="navbar-item">
+              <a href="#" class="navbar-link skewBg" data-nav-link>Contact</a>
+            </li> -->
+
+            </ul>
+          </nav>
+
+          <div class="header-actions">
+
+            <button class="cart-btn" aria-label="cart">
+              <ion-icon name="cart"></ion-icon>
+
+              <span class="cart-badge">0</span>
+            </button>
+
+            <button class="search-btn" aria-label="open search" data-search-toggler>
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+
+            <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+              <ion-icon name="menu-outline" class="menu"></ion-icon>
+              <ion-icon name="close-outline" class="close"></ion-icon>
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+
+
+
+
+
+    <!-- 
+    - #SEARCH BOX
+  -->
+
+    <div class="search-container" data-search-box>
+
+      <div class="input-wrapper">
+        <input type="search" name="search" aria-label="search" placeholder="Search here..." class="search-field">
+
+        <button class="search-submit" aria-label="submit search" data-search-toggler>
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+
+        <button class="search-close" aria-label="close search" data-search-toggler></button>
+      </div>
+
+    </div>
+
+
+
+
+
+    <main>
+      <article>
+
+        <!-- 
+        - #HERO
+      -->
+
+        <section class="section hero" id="home" aria-label="home">
+
+          <div class="container">
+
+            <div class="hero-content" style="font-family: 'Urbanist', sans-serif;  ">
+
+              <h1 style="font-size: 5rem;font-weight: 700;color:#fff;">We are Dof interact </h1>
+              <p class="hero-text" style="font-size: 2rem;">
+                a team of developers and designers of Simulation Motion Platform ,
+                fulfilled with a carefully designed solution to create the most realistic experiences to users.
+              </p>
+
+              <button class="btn skewBg">Read More</button>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- intro -->
+        <div style="background-color: white;">
+
+          <div style="margin: 0 15% 0 15%;">
+            <br><br>
+
+            <div style="background-color: white;" class="container-fluid">
+              <div class="row align-items-center">
+                <div class="col-lg-5 reveal fade-left">
+                  <img style="width: 100%; height: auto;"
+                    src="https://media.discordapp.net/attachments/757075637226700930/1117710215727554560/Black_6-DOF_Brochure_V1.jpg?width=850&height=936"
+                    alt="6DOF.png">
+                </div>
+                <div class="col-lg-7">
+                  <div>
+                    <h1 style="font-size:4.2rem;font-family: 'Urbanist', sans-serif;font-weight: 600;">PROFESSIONAL
+                      <span style="color:red;display:inline-block;" class="text-content">SERIES</span></h1>
+                    <p style="font-family: 'Urbanist', sans-serif;font-weight: 500;font-size: 1.7rem">
+                      Wide range of professional motion platforms and simulators components dedicated to customers, who
+                      expect from motion systems not only high quality and reliability,
+                      but also incredible precision of movement, impressive dynamics and performance. Motion platforms
+                      are
+                      perfect for building full motion simulators for research, education,
+                      equipment testing or professional flight and driving training. A Large selection from 3DOF to 6DOF
+                      perfectly fits into the most state-of-the-art projects and applications in the field of motion
+                      simulation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br><br><br>
+
+            <div class="row align-items-center">
+
+              <div class="col-lg-6 order-lg-first order-2">
+                <div>
+                  <h1 style="font-size:4.2rem;font-family: 'Urbanist', sans-serif;font-weight: 600;"> <span
+                      style="color: red; display: inline;">MOTION </span>COCKPIT 3DOF</h1>
+                  <p style="font-family: 'Urbanist', sans-serif;font-weight: 500;font-size: 1.7rem">
+                    The 3DOF is an designed for pro racing car simulation, dedicated to both drivers training and sim
+                    racing enthusiasts.
+                    The motion system based on world’s fastest linear actuator’s technology provides incredible levels
+                    of vehicle feedback to the driver.
+                    This motion platform is suitable for Rally, GT and F1 simulations, also the small footprint and
+                    lightweight design allow to fit the machine to every racing room.
+                  </p>
+                </div>
+
+
+              </div>
+              <div class="col-lg-6 order-lg-last order-1 reveal fade-right">
+                <img style="width: 100%; height: auto;"
+                  src="https://media.discordapp.net/attachments/757075637226700930/1117710100224815166/White_3-Dof_Brochure_V2.jpg?width=1056&height=936"
+                  alt="3DOF.png">
+              </div>
+
+            </div>
+
+          </div>
+          <br><br>
+
+
+        </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+  <div class="section-wrapper">
+
+    <!-- 
+          - #LATEST GAME
+        -->
+    <section class="section featured-game" id="features" aria-label="featured game" style="background-color: #131313;">
+
+      <div class="container">
+
+        <h2 class="h2 section-title">
+          <span class="span">Experience Limitless Worlds at DOF interact</span>
+        </h2>
+
+        <ul class="has-scrollbar">
+
+          <li class="scrollbar-item">
+            <div class="featured-game-card">
+
+              <figure class="card-banner img-holder" style="--width: 450; --height: 600;">
+                <img src="/DOF interactHello/img/Scrollbar/scrollbar-1.png" width="450" height="600" loading="lazy"
+                  alt="Motion Simlators" class="img-cover">
+              </figure>
+
+              <div class="card-content">
+
+                <h3 class="h3">
+                  <a href="#" class="card-title" tabindex="-1">
+                    Motion <span class="span">Simulators</span>
+                  </a>
+                </h3>
+
+                <span class="card-meta">
+                  <ion-icon name="link-sharp"></ion-icon>
+
+                  <span class="span">Dof Interact</span>
+                </span>
+
+              </div>
+
+              <div class="card-content-overlay">
+
+                <img src="/DOF interactHello/img/Scrollbar/shopping-cart.png" width="36" height="61" loading="lazy" alt=""
+                  class="card-icon">
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">
+                    <span class="span">Motion Simulators</span>
+                  </a>
+                </h3>
+
+                <span class="card-meta">
+                  <ion-icon name="link-sharp"></ion-icon>
+
+                  <span class="span">Dof Inteact</span>
+                </span>
+
+              </div>
+
+            </div>
+          </li>
+
+          <li class="scrollbar-item">
+            <div class="featured-game-card">
+
+              <figure class="card-banner img-holder" style="--width: 450; --height: 600;">
+                <img src="/DOF interactHello/img/Scrollbar/scrollbar-2.png" width="450" height="600" loading="lazy"
+                  alt="Wheels" class="img-cover">
+              </figure>
+
+              <div class="card-content">
+
+                <h3 class="h3">
+                  <a href="#" class="card-title" tabindex="-1">
+                    <span class="span">Wheels</span>
+                  </a>
+                </h3>
+
+                <span class="card-meta">
+                  <ion-icon name="link-sharp"></ion-icon>
+
+                  <span class="span">Dof Inteact</span>
+                </span>
+
+              </div>
+
+              <div class="card-content-overlay">
+
+                <img src="/DOF interactHello/img/Scrollbar/shopping-cart.png" width="36" height="61" loading="lazy" alt=""
+                  class="card-icon">
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">
+                    <span class="span">Wheels</span>
+                  </a>
+                </h3>
+
+                <span class="card-meta">
+                  <ion-icon name="link-sharp"></ion-icon>
+
+                  <span class="span">Dof Inteact</span>
+                </span>
+
+              </div>
+
+            </div>
+          </li>
+
+          <li class="scrollbar-item">
+            <div class="featured-game-card">
+
+              <figure class="card-banner img-holder" style="--width: 450; --height: 600;">
+                <img src="/DOF interactHello/img/Scrollbar/scrollbar-3.png" width="450" height="600" loading="lazy"
+                  alt="Flight Simlators" class="img-cover">
+              </figure>
+
+              <div class="card-content">
+
+                <h3 class="h3">
+                  <a href="#" class="card-title" tabindex="-1">
+                    <span class="span">Flight Simulators</span>
+                  </a>
+                </h3>
+
+                <span class="card-meta">
+                  <ion-icon name="link-sharp"></ion-icon>
+
+                  <span class="span">Dof Inteact</span>
+                </span>
+
+              </div>
+
+              <div class="card-content-overlay">
+
+                <img src="/DOF interactHello/img/Scrollbar/shopping-cart.png" width="36" height="61" loading="lazy" alt=""
+                  class="card-icon">
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">
+                    <span class="span">Flight Simulators</span>
+                  </a>
+                </h3>
+
+                <span class="card-meta">
+                  <ion-icon name="link-sharp"></ion-icon>
+
+                  <span class="span">Dof Inteact</span>
+                </span>
+
+              </div>
+
+            </div>
+          </li>
+
+          <li class="scrollbar-item">
+            <div class="featured-game-card">
+
+              <figure class="card-banner img-holder" style="--width: 450; --height: 600;">
+                <img src="/DOF interactHello/img/Scrollbar/scrollbar-4.png" width="450" height="600" loading="lazy"
+                  alt="Accessories" class="img-cover">
+              </figure>
+
+              <div class="card-content">
+
+                <h3 class="h3">
+                  <a href="#" class="card-title" tabindex="-1">
+                    <span class="span">Accessories</span>
+                  </a>
+                </h3>
+
+                <span class="card-meta">
+                  <ion-icon name="link-sharp"></ion-icon>
+
+                  <span class="span">Dof Inteact</span>
+                </span>
+
+              </div>
+
+              <div class="card-content-overlay">
+
+                <img src="/DOF interactHello/img/Scrollbar/shopping-cart.png" width="36" height="61" loading="lazy" alt=""
+                  class="card-icon">
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">
+                    <span class="span">Accessories</span>
+                  </a>
+                </h3>
+
+                <span class="card-meta">
+                  <ion-icon name="link-sharp"></ion-icon>
+
+                  <span class="span">Dof Inteact</span>
+                </span>
+
+              </div>
+
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 
+        - #BLOG
+      -->
+
+    <section class="section blog" id="blog" aria-label="blog">
+      <div class="container">
+
+        <h2 class="h2 section-title" style="font-family: 'Urbanist', sans-serif;font-weight: 500;">
+          Latest News & <span class="span" style="color: black;font-weight: 700; margin-bottom: 3rem;">EVENTS</span>
+        </h2>
+
+
+        <ul class="blog-list">
+         
+          <li>
+            <div class="blog-card blog-card-1">
+
+              <figure class="card-banner img-holder" style="--width: 400; --height: 290;">
+                <img
+                  src="https://scontent.fbkk13-2.fna.fbcdn.net/v/t39.30808-6/356342627_290767039995159_7577006150388025564_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeHpTI97PstiJYV0sViAKEgDHtvZ1nHlVzwe29nWceVXPJUJ_RF4iklxHgD61vnl8-U4PilphGBAThGl15sBz36g&_nc_ohc=S7GEs5f05lQAX_5t5k-&_nc_ht=scontent.fbkk13-2.fna&oh=00_AfAt-iskXU1-zulnYSkWQbrR5SOqqF_7G1T8BdzZJ_6OUg&oe=64B2F801"
+                  width="400" height="290" loading="lazy" alt="Bangkok Auto Salon 2023" class="img-cover"
+                  style="border-radius: 16px 16px 0 0;">
+              </figure>
+
+              <div class="card-content">
+
+                <ul class="card-meta-list">
+
+                  <li class="card-meta-item">
+                    <ion-icon name="person-outline"></ion-icon>
+
+                    <a href="#" class="item-text">Dof Interact</a>
+                  </li>
+
+                  <li class="card-meta-item">
+                    <ion-icon name="calendar-outline"></ion-icon>
+
+                    <time datetime="2023-06-25" class="item-text">June 25,2023</time>
+                  </li>
+
+                </ul>
+
+                <h3>
+                  <a href="https://www.facebook.com/photo.php?fbid=290767043328492&set=pb.100071855964101.-2207520000.&type=3"
+                    class="card-title">Bangkok Auto Salon 2023</a>
+                </h3>
+
+                <p class="card-text" style="font-family: 'Sarabun', sans-serif;">
+                  <br>ทีมงาน DOF Interact ขนเครื่อง simulator ไปให้ทุกท่านได้สัมผัสทดลองเล่นกันแบบจุใจ
+                  และยังมีกิจกรรมร่วมสนุกมากมาย พบกันที่งาน Bangkok Auto Salon 2023 <br><br>
+                </p>
+
+                <a href="https://www.facebook.com/photo.php?fbid=290767043328492&set=pb.100071855964101.-2207520000.&type=3"
+                  class="card-link">
+                  <span class="span">Read More</span>
+
+                  <ion-icon name="caret-forward"></ion-icon>
+                </a>
+
+              </div>
+            </div>
+          </li>
+       
+          <li>
+            <div class="blog-card">
+
+              <figure class="card-banner img-holder" style="--width: 400; --height: 290;">
+                <img
+                  src="https://scontent.fbkk12-1.fna.fbcdn.net/v/t39.30808-6/316529044_207122651692932_6027443654191576608_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHlcmNefH8WS2dRaUy8T6m7O8iAnwxR6gk7yICfDFHqCS-Vci9Fir4bR-feVsLk7wrzt39BjtxGv7fF-W7GvZVM&_nc_ohc=yNjxDNXYP0YAX902Ljj&_nc_ht=scontent.fbkk12-1.fna&oh=00_AfCm1AoxVcKC8iXmMHYml9PQTTmUpp_rEzGkVskcgx0_pg&oe=64B342E2"
+                  width="400" height="290" loading="lazy" alt="Thailand International Motor Expo 2022" class="img-cover"
+                  style="border-radius: 16px 16px 0 0;">
+              </figure>
+
+              <div class="card-content">
+
+                <ul class="card-meta-list">
+
+                  <li class="card-meta-item">
+                    <ion-icon name="person-outline"></ion-icon>
+
+                    <a href="#" class="item-text">Dof Interact</a>
+                  </li>
+
+                  <li class="card-meta-item">
+                    <ion-icon name="calendar-outline"></ion-icon>
+
+                    <time datetime="2022-11-21" class="item-text">November 21, 2022</time>
+                  </li>
+
+                </ul>
+
+                <h3>
+                  <a href="https://www.facebook.com/photo/?fbid=207122658359598&set=pb.100071855964101.-2207520000."
+                    class="card-title">Thailand International Motor Expo 2022</a>
+                </h3>
+
+                <p class="card-text"  style="font-family: 'Sarabun', sans-serif;">
+                  พบกันที่บูธ "Driving Skills Checklist" พบกับเครื่อง Full Cockpit Simulator Motion Platform
+                  พร้อมอุปกรณ์ SimRacing แบบจัดใหญ่จัดเต็ม พร้อมโปรโมชั่นสุดเร้าใจขั้นสุด
+                  ให้ทุกท่านได้ทดลองสัมผัสและร่วมกิจกรรมภายในบูธ
+                </p>
+
+                <a href="https://www.facebook.com/photo/?fbid=207122658359598&set=pb.100071855964101.-2207520000."
+                  class="card-link">
+                  <span class="span">Read More</span>
+
+                  <ion-icon name="caret-forward"></ion-icon>
+                </a>
+
+              </div>
+
+            </div>
+          </li>
+
+          <li>
+            <div class="blog-card">
+
+              <figure class="card-banner img-holder" style="--width: 400; --height: 290;">
+                <img
+                  src="https://scontent.fbkk13-1.fna.fbcdn.net/v/t39.30808-6/278004945_159327769806094_6109652691155747767_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGClV5YRQcHU56JVJXoLGy9ItzUmtw06U0i3NSa3DTpTSiBM8shDNeILf6H58FXnoDxUfok9UarxbTmT2K49hfa&_nc_ohc=aBguUxzfY2cAX8qBh6b&_nc_ht=scontent.fbkk13-1.fna&oh=00_AfAdilTKWJbGFVLw5yKqL7W5KX3SQLkLkSOxt_2enzJNUQ&oe=64B233C6"
+                  width="400" height="290" loading="lazy" alt="Bangkok International Motor Show 2022 " class="img-cover"
+                  style="border-radius: 16px 16px 0 0;">
+              </figure>
+
+              <div class="card-content">
+
+                <ul class="card-meta-list">
+
+                  <li class="card-meta-item">
+                    <ion-icon name="person-outline"></ion-icon>
+
+                    <a href="#" class="item-text">Dof Interract</a>
+                  </li>
+
+                  <li class="card-meta-item">
+                    <ion-icon name="calendar-outline"></ion-icon>
+
+                    <time datetime="2022-03-27" class="item-text">March 27, 2022</time>
+                  </li>
+
+                </ul>
+
+                <h3>
+                  <a href="https://fb.watch/lJVCy0LQ5G/" class="card-title">Bangkok International Motor Show 2022 </a>
+                </h3>
+
+                <p class="card-text"  style="font-family: 'Sarabun', sans-serif;">
+                  DOF Interact ผู้ผลิตและจัดจำหน่าย ผลิตภัณฑ์ Motion Platform เจ้าแรกและเจ้าเดียวในไทย
+                  พร้อมเปิดประสบการณ์ใหม่ให้กับผู้เล่นเกม นักแข่ง หรือผู้ที่ต้องการฝึกหัดที่งาน Bangkok International
+                  Motor Show 2022
+                </p>
+
+                <a href="https://fb.watch/lJVCy0LQ5G/" class="card-link">
+                  <span class="span">Read More</span>
+
+                  <ion-icon name="caret-forward"></ion-icon>
+                </a>
+
+              </div>
+
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- 
+        - #NEWSLETTER
+      -->
+
+
+
+    </article>
+    </main>
+
+
+
+
+
+    <!-- 
+    - #FOOTER
+  -->
+    
+    <footer class="footer">
+     <br>
+     <br>
+      <div class="footer-top">  
+        <div class="container">
+
+          <div class="footer-brand">
+
+            <a href="./index.html" class="logo">DOF Interact</a>
+
+            <p class="footer-text">
+              Simulator Motion Platform.
+            </p>
+
+            <ul class="contact-list">
+
+              <li class="contact-item">
+                <div class="contact-icon">
+                  <ion-icon name="location"></ion-icon>
+                </div>
+
+                <address class="item-text">
+                  Address : 16 Soi Rangsit-Nakhon Nayok 68, Bueng Yitho Subdistrict,Thanyaburi District,Pathum Thani
+                  12130
+                </address>
+              </li>
+
+              <li class="contact-item">
+                <div class="contact-icon">
+                  <ion-icon name="headset"></ion-icon>
+                </div>
+
+                <a href="tel:+241245654235" class="item-text">Phone : 0972514782</a>
+              </li>
+
+              <li class="contact-item">
+                <div class="contact-icon">
+                  <ion-icon name="mail-open"></ion-icon>
+                </div>
+
+                <a href="mailto:info@exemple.com" class="item-text">Email : DOFINTERACT@GMAIL.COM</a>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Products</p>
+            </li>
+
+            <li>
+              <a href="./products.html" class="footer-link">Motion Platform (3)</a>
+            </li>
+
+            <li>
+              <a href="./products.html" class="footer-link">Racing Wheels/Wheel Bases (3)</a>
+            </li>
+
+            <li>
+              <a href="./products.html" class="footer-link">FANATEC (15)</a>
+            </li>
+
+            <li>
+              <a href="./products.html" class="footer-link">MOZA (9)</a>
+            </li>
+
+            <li>
+              <a href="./products.html" class="footer-link">THRUSTMASTER (6)</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Need Help?</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Terms & Conditions</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Privacy Policy</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Refund Policy</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Affiliate</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Use Cases</a>
+            </li>
+
+          </ul>
+
+          <div class="footer-wrapper">
+
+            <div class="social-wrapper">
+
+              <p class="footer-list-title">Follow Us</p>
+
+              <ul class="social-list">
+
+                <li>
+                  <a href="https://www.facebook.com/profile.php?id=100071855964101" class="social-link"
+                    style="background-color: #3b5998">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.youtube.com/@dofinteract5863" class="social-link"
+                    style="background-color: #d71e18">
+                    <ion-icon name="logo-youtube"></ion-icon>
+                  </a>
+                </li>
+
+                <!-- <li>
+                <a href="#" class="social-link" style="background-color: #d71e18">
+                  <ion-icon name="logo-pinterest"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link" style="background-color: #1565c0">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li> -->
+
+              </ul>
+
+            </div>
+
+            <!-- <div class="footer-newsletter">
+
+            <p class="footer-list-title">Newsletter Sign Up</p>
+
+            <form action="" class="footer-newsletter">
+              <input type="email" name="email_address" aria-label="email" placeholder="Enter your email" required
+                class="email-field">
+
+              <button type="submit" class="footer-btn" aria-label="submit">
+                <ion-icon name="rocket"></ion-icon>
+              </button>
+            </form>
+
+          </div> -->
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 Gamics. All Right Reserved by <a href="#" class="copyright-link">codewithsadee</a>
+        </p>
+
+        <img src="./assets/images/footer-bottom-img.png" width="340" height="21" loading="lazy" alt=""
+          class="footer-bottom-img">
+
+      </div>
+    </div> -->
+
+    </footer>
+
+
+
+
+
+    <!-- 
+    - #BACK TO TOP
+  -->
+
+    <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+      <ion-icon style="color: white;" name="caret-up-outline"></ion-icon>
+    </a>
+
+
+
+
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="./assets/js/script.js" defer></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="../javascript/script.js"></script>
+
+</body>
+
+</html>

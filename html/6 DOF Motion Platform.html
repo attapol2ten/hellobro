@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 DOF Motion Platform</title>
+
+    <style>
+      .reveal {
+        position: relative;
+        opacity: 0;
+      }
+
+      .reveal.active {
+        opacity: 1;
+      }
+
+      .active.fade-left {
+          animation: fade-left 1s ease-in;
+      }
+
+      @keyframes fade-left {
+        0% {
+          transform: translateX(-100px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .active.fade-right {
+        animation: fade-right 1s ease-in;
+      }
+
+      @keyframes fade-right {
+        0% {
+          transform: translateX(100px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      #ARCHITECTURE{
+        border-right: 1px solid white;
+      }
+
+      #PAYLOAD{
+        border-right: 1px solid white;
+      }
+
+      #MIN-HEIGHT{
+        border-right: 1px solid white;
+      }
+
+      #WIDE{
+        border-right: 1px solid white;
+      }
+
+      #FEATURES-1{
+          border-top: 1px solid white; 
+          border-right: 1px solid white; 
+          border-bottom: 1px solid white; 
+          border-left: 1px solid white;
+      }
+
+      #FEATURES-2{
+        border-top: 1px solid white; 
+        border-bottom: 1px solid white; 
+        border-right: 1px solid white;
+      }
+
+      #FEATURES-3{
+        border-top: 1px solid white; 
+        border-right: 1px solid white; 
+        border-bottom: 1px solid white;
+      }
+
+      #FEATURES-4{
+        border-top: 1px solid white; 
+        border-right: 1px solid white; 
+        border-bottom: 1px solid white;
+      }
+
+      @media only screen and (max-width: 991px) {
+
+        #ARCHITECTURE{
+          border-right: none;
+          border-top: 1px solid white;
+          border-bottom: 1px solid white;
+          padding-top: 15px;
+          padding-bottom: 5px;
+        }
+        
+        #PAYLOAD{
+          border-right: none;
+          border-bottom: 1px solid white;
+          padding-top: 15px;
+          padding-bottom: 5px;
+        }
+
+        #MIN-HEIGHT{
+          border-right: none;
+          border-bottom: 1px solid white;
+          padding-top: 15px;
+          padding-bottom: 5px;
+        }
+
+        #WIDE{
+          border-right: none;
+          border-bottom: 1px solid white;
+          padding-top: 15px;
+          padding-bottom: 5px;
+        }
+
+        #FEATURES-1{
+          border-top: 1px solid white; 
+          border-right: none; 
+          border-bottom: 1px solid white; 
+          border-left: none;
+          padding-bottom: 15px;
+      }
+
+      #FEATURES-2{
+        border-top: none; 
+        border-bottom: 1px solid white; 
+        border-right: none;
+        padding-bottom: 15px;
+      }
+
+      #FEATURES-3{
+        border-top: none; 
+        border-right: none; 
+        border-bottom: 1px solid white;
+        padding-bottom: 15px;
+      }
+
+      #FEATURES-4{
+        border-top: none; 
+        border-right: none; 
+        border-bottom: 1px solid white;
+        padding-bottom: 15px;
+      }
+  
+      }
+
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="../img/LOGO6DOF5.png" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+</head>
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header">
+
+    <div class="header-top">
+      <div class="container">
+
+        <!-- <div class="countdown-text">
+          Exclusive Black Friday ! Offer <span class="span skewBg">10</span> Days
+        </div>
+
+        <div class="social-wrapper">
+
+          <p class="social-title">Follow us on :</p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div> -->
+
+      </div>
+    </div>
+
+    <div style="margin-top: -6px;" class="header-bottom" data-header>
+      <div class="container">
+
+        <div class="containerLeftHeader">
+          <div class="itemLeftLogo">
+            <img src="https://media.discordapp.net/attachments/862251208969289748/1120226497026867280/LOGO6DOF5.png?"
+              alt="">
+          </div>
+
+          <div class="itemRightNameLogo">
+            <h1
+              style="font-family: Kanit, sans-serif; font-size: 2.7rem;margin-right: 1rem;font-weight: 400; color:#e12728;">
+              DOF</h1>
+            <h1 style="font-family: Kanit, sans-serif; font-size: 2.7rem;font-weight: 400; color:#fff;">
+              INTERACT</h1>
+          </div>
+        </div>
+
+        <nav class="navbar" data-navbar>
+          <ul style="width: 100%;" class="navbar-list">
+
+            <li class="navbar-item">
+              <a href="./index.html" class="navbar-link skewBg" data-nav-link>HOME</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="./products.html" class="navbar-link skewBg" data-nav-link>PRODUCTS</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="./about.html" class="navbar-link skewBg" data-nav-link>ABOUT</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="./contact.html" class="navbar-link skewBg" data-nav-link>CONTACT</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="./catalog.html" class="navbar-link skewBg" data-nav-link>CATALOG</a>
+            </li>
+
+            <!-- <li class="navbar-item">
+              <a href="#" class="navbar-link skewBg" data-nav-link>Contact</a>
+            </li> -->
+
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+
+          <button class="cart-btn" aria-label="cart">
+            <ion-icon name="cart"></ion-icon>
+
+            <span class="cart-badge">0</span>
+          </button>
+
+          <button class="search-btn" aria-label="open search" data-search-toggler>
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+
+          <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+            <ion-icon name="menu-outline" class="menu"></ion-icon>
+            <ion-icon name="close-outline" class="close"></ion-icon>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+
+  <!-- 
+    - #SEARCH BOX
+  -->
+
+  <div class="search-container" data-search-box>
+
+    <div class="input-wrapper">
+      <input type="search" name="search" aria-label="search" placeholder="Search here..." class="search-field">
+
+      <button class="search-submit" aria-label="submit search" data-search-toggler>
+        <ion-icon name="search-outline"></ion-icon>
+      </button>
+
+      <button class="search-close" aria-label="close search" data-search-toggler></button>
+    </div>
+
+  </div>
+
+  <br><br><br><br>
+  <!-- 6DOF HIGHLIGHTS -->
+    <div style="border: 1px solid black;" class="container">
+
+      <br>
+      <h1 style="color: white; text-align: center; font-size: 4rem;">PLATFORM HIGHLIGHTS</h1> <br><br><br>
+
+      <div class="row">
+          <div id="ARCHITECTURE"  class="col-lg-3 line">
+            
+              <h3 style="color: white; text-align: center; font-size: 3rem; margin-top: 4.3px;"><b id="c1" class="s-counter" data-value="6">6</b> <span style="display: inline;"> DOF</span></h3>
+              <p style="color: white; text-align: center; font-size: 1.8rem;">ARCHITECTURE</p>
+
+          </div>
+
+          <div id="PAYLOAD" class="col-lg-3">
+
+              <h3 style="color: white; text-align: center; font-size: 3rem;"><b id="c2" class="s-counter" data-value="150">150</b> <span style="display: inline;">kg</span></h3>
+              <p style="color: white; text-align: center; font-size: 1.8rem;">PAYLOAD</p>
+
+          </div>
+
+          <div id="MIN-HEIGHT" class="col-lg-3">
+
+              <h3 style="color: white; text-align: center; font-size: 3rem;"><b id="c3" class="s-counter" data-value="162">162</b> <span style="display: inline;">cm</span></h3>
+              <p style="color: white; text-align: center; font-size: 1.8rem;">MIN HEIGHT</p>
+
+          </div>
+
+          <div id="WIDE" class="col-lg-3">
+
+              <h3 style="color: white; text-align: center; font-size: 3rem;"><b id="c4" class="s-counter" data-value="208">208</b> <span style="display: inline;">cm</span></h3>
+              <p style="color: white; text-align: center; font-size: 1.8rem;">WIDE</p>
+              
+          </div>
+
+      </div>
+      <br>
+
+    </div>
+
+
+    <!-- 6DOF FEATURES -->
+    <div class="container">
+
+      <br><br><br>
+      <h1 style="color: white; text-align: center; font-size: 4rem;" class="Header">KEY FEATURES</h1> <br><br>
+
+      <div class="row">
+          <div id="FEATURES-1"  class="col-lg-3">
+              
+              <br>
+              <img style="display: block; width: 50px; height: 50px; margin-left: auto; margin-right: auto;" src="https://media.discordapp.net/attachments/757075637226700930/1120259724441550858/6Degree.png?width=512&height=512" alt="6Degree.png"> <br>
+              <p style="color: white; text-align: center; font-size: 1.8rem;">6 Degree of Freedom</p>
+  
+          </div>
+  
+          <div id="FEATURES-2" class="col-lg-3">
+              
+              <br>
+              <img style="display: block; width: 50px; height: 50px; margin-left: auto; margin-right: auto;" src="https://media.discordapp.net/attachments/757075637226700930/1120259725297209384/vr.png?width=512&height=512" alt="VR.png"> <br>
+              <p style="color: white; text-align: center; font-size: 1.8rem;">VR support</p>
+  
+          </div>
+  
+          <div id="FEATURES-3" class="col-lg-3">
+  
+              <br>
+              <img style="display: block; width: 50px; height: 50px; margin-left: auto; margin-right: auto;" src="https://media.discordapp.net/attachments/757075637226700930/1120259724953255966/kg.png?width=512&height=512" alt="Kg.png"> <br>
+              <p style="color: white; text-align: center; font-size: 1.8rem;">150 Kg(Max) Payload(Player)</p>
+  
+          </div>
+  
+          <div id="FEATURES-4" class="col-lg-3">
+  
+              <br>
+              <img style="display: block; width: 50px; height: 50px; margin-left: auto; margin-right: auto;" src="https://media.discordapp.net/attachments/757075637226700930/1120259724684841012/ac.png?width=512&height=512" alt="Kg.png"> <br>
+              <p style="color: white; text-align: center; font-size: 1.8rem;">AC power 220V</p>
+              
+          </div>
+      </div>
+      <br><br><br><br><br>
+
+  </div>
+
+
+  <!-- 6DOF Details -->
+  <div style="background-color: white;">
+
+    <div style="margin: 0px 50px 0px 50px;">
+
+        <br><br><br>
+        <h1 style="text-align: center; font-size: 3rem;">6 DOF Motion Platform</h1>
+
+        <div style="background-color: white;" class="container-fluid">
+
+            <div class="row align-items-center">
+    
+                <div class="col-lg-6">
+    
+                    <br><br>
+                    <img style="width: 100%; height: auto;" class="reveal fade-left" src="../img/6DOF(1).png" alt="6DOF.png">
+    
+                </div>
+    
+                <div style="font-size: 1.8rem;" class="col-lg-6">
+    
+                    <br><br>
+                    <p>
+                        6DOF is designed for customers looking for the most realistic simulation. 
+                        The unique combination of professional motion technology and modern, 
+                        adjustable accessories allows users to train and experience real flight 
+                        or racing simulation.
+                    </p>
+    
+                </div>
+    
+            </div>
+    
+            <div class="row align-items-center">
+    
+                <div style="font-size: 1.8rem;" class="col-lg-6 order-lg-1 order-2">
+                    
+                    <br><br>
+                    <p>
+                        The motion platform uses its 6 degrees of freedom (surge, sway, heave roll, pitch, and yaw) 
+                        to feed precise motion inputs that very accurately represent key sensations such as understeer, 
+                        traction loss, lateral g-force inputs, braking. Machine gives the best feeling of the track – bumps, 
+                        curbs, gravel or grass. 6DOF motion platform- advanced linear system is chosen also by militaries and 
+                        universities as a training tool for various projects.
+                    </p>
+    
+                </div>
+    
+                <div class="col-lg-6 order-lg-2 order-1">
+                    
+                    <br><br>
+                    <img style="width: 100%; height: auto;" class="reveal fade-right" src="../img/6DOF(2).png" alt="6DOF.png">
+                    
+                </div>
+    
+            </div>
+    
+            <div class="row align-items-center">
+    
+                <div class="col-lg-6">
+
+                    <br><br>
+                    <img style="width: 100%; height: auto;" class="reveal fade-left" src="../img/6DOF(3).png" alt="6DOF.png">
+    
+                </div>
+    
+                <div style="font-size: 1.8rem;" class="col-lg-6">
+
+                    <br><br>
+                    <p> MOTION SYSTEM BENEFITS</p>
+                    <p>6DOF motion system based on patent pending linear actuators technology has been refreshed with several additional functionalities:</p>   
+    
+                    <ul>
+                        <li style="list-style: disc;">comfortable and ergonomic position for the driver/pilot</li>
+                        <li style="list-style: disc;">the latest generation System linear actuators – very quiet and precise operation</li>
+                        <li style="list-style: disc;">motion and vibrations that perfectly reflect the situations in the selected game or simulation application</li>
+                        <li style="list-style: disc;">more compact design and small footprint fits to the medium size gaming rooms, VR centers, and training facilities</li>
+                        <li style="list-style: disc;">more responsive and fast-moving way to push telemetry data form simulation to the hardware</li>
+                    </ul>
+     
+                </div>
+    
+            </div>
+            <br><br>
+        </div>
+
+        
+    
+    </div>
+
+
+</div>
+
+
+<!-- 6DOF Table -->
+<div style="background-color: white;">
+
+  <div>
+
+      <br>
+      <h3 style="text-align: center; font-size: 2.6rem;">SPECIFICATION</h3> <br>
+
+      <table class="table">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Direction</th>
+              <th scope="col">Max Excursion</th>
+              <th scope="col">Max Velocity</th>
+              <th scope="col">Max Acceleration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Surge</td>
+              <td>+-150mm</td>
+              <td>300mm/s</td>
+              <td>1.7G</td>
+            </tr>
+
+            <tr>
+              <td>Sway</td>
+              <td>+-150mm</td>
+              <td>300mm/s</td>
+              <td>1.6G</td>
+            </tr>
+
+            <tr>
+              <td>Heave</td>
+              <td>+-150mm</td>
+              <td>300mm/s</td>
+              <td>2G</td>
+            </tr>
+
+            <tr>
+              <td>Roll</td>
+              <td>+-15*</td>
+              <td>30*/s</td>
+              <td>50*/s2</td>
+            </tr>
+
+            <tr>
+              <td>Roll</td>
+              <td>+-15*</td>
+              <td>30*/s</td>
+              <td>50*/s2</td>
+            </tr>
+
+            <tr>
+              <td>Roll</td>
+              <td>+-19*</td>
+              <td>30*/s</td>
+              <td>50*/s2</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+  </div>
+  <br><br>
+
+</div>
+<br><br>
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="./index.html" class="logo">DOF Interact</a>
+
+          <p class="footer-text">
+            Simulator Motion Platform.
+          </p>
+
+          <ul class="contact-list">
+
+            <li class="contact-item">
+              <div class="contact-icon">
+                <ion-icon name="location"></ion-icon>
+              </div>
+
+              <address class="item-text">
+                Address : 16 Soi Rangsit-Nakhon Nayok 68, Bueng Yitho Subdistrict,Thanyaburi District,Pathum Thani 12130
+              </address>
+            </li>
+
+            <li class="contact-item">
+              <div class="contact-icon">
+                <ion-icon name="headset"></ion-icon>
+              </div>
+
+              <a href="tel:+241245654235" class="item-text">Phone : 0972514782</a>
+            </li>
+
+            <li class="contact-item">
+              <div class="contact-icon">
+                <ion-icon name="mail-open"></ion-icon>
+              </div>
+
+              <a href="mailto:info@exemple.com" class="item-text">Email : DOFINTERACT@GMAIL.COM</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Products</p>
+          </li>
+
+          <li>
+            <a href="./products.html" class="footer-link">Motion Platform (3)</a>
+          </li>
+
+          <li>
+            <a href="./products.html" class="footer-link">Racing Wheels/Wheel Bases (3)</a>
+          </li>
+
+          <li>
+            <a href="./products.html" class="footer-link">FANATEC (15)</a>
+          </li>
+
+          <li>
+            <a href="./products.html" class="footer-link">MOZA (9)</a>
+          </li>
+
+          <li>
+            <a href="./products.html" class="footer-link">THRUSTMASTER (6)</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Need Help?</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Terms & Conditions</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Refund Policy</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Affiliate</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Use Cases</a>
+          </li>
+
+        </ul>
+
+        <div class="footer-wrapper">
+
+          <div class="social-wrapper">
+
+            <p class="footer-list-title">Follow Us</p>
+
+            <ul class="social-list">
+
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=100071855964101" class="social-link" style="background-color: #3b5998">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.youtube.com/@dofinteract5863" class="social-link" style="background-color: #d71e18">
+                  <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+              </li>
+
+              <!-- <li>
+                <a href="#" class="social-link" style="background-color: #d71e18">
+                  <ion-icon name="logo-pinterest"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link" style="background-color: #1565c0">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li> -->
+
+            </ul>
+
+          </div>
+
+          <!-- <div class="footer-newsletter">
+
+            <p class="footer-list-title">Newsletter Sign Up</p>
+
+            <form action="" class="footer-newsletter">
+              <input type="email" name="email_address" aria-label="email" placeholder="Enter your email" required
+                class="email-field">
+
+              <button type="submit" class="footer-btn" aria-label="submit">
+                <ion-icon name="rocket"></ion-icon>
+              </button>
+            </form>
+
+          </div> -->
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 Gamics. All Right Reserved by <a href="#" class="copyright-link">codewithsadee</a>
+        </p>
+
+        <img src="./assets/images/footer-bottom-img.png" width="340" height="21" loading="lazy" alt=""
+          class="footer-bottom-img">
+
+      </div>
+    </div> -->
+
+  </footer>
+
+    <!-- 
+      - ionicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="../javascript/run.js"></script>
+    <script src="../javascript/script.js"></script>
+    
+</body>
+</html>

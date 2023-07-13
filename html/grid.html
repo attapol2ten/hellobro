@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .reveal {
+        position: relative;
+        opacity: 0;
+        }
+
+        .reveal.active {
+        opacity: 1;
+        }
+
+        .active.fade-left {
+        animation: fade-left 1s ease-in;
+        }
+
+        @keyframes fade-left {
+        0% {
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        }
+
+        .active.fade-right {
+      animation: fade-right 1s ease-in;
+    }
+
+    @keyframes fade-right {
+      0% {
+        transform: translateX(100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    
+    </style>
+
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div style="margin: 50px;">
+
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-6 reveal fade-left">
+                    <img src="https://media.discordapp.net/attachments/757075637226700930/1117710215727554560/Black_6-DOF_Brochure_V1.jpg?width=850&height=936" alt="6DOF.png">
+                </div>
+                <div class="col-lg-6">
+                    <div>
+                        <h1>PROFESSIONAL SERIES</h1>
+                        <p>
+                            Wide range of professional motion platforms and simulators components dedicated to customers, who expect from motion systems not only high quality and reliability, 
+                            but also incredible precision of movement, impressive dynamics and performance. Motion platforms are perfect for building full motion simulators for research, education, 
+                            equipment testing or professional flight and driving training. A Large selection from 3DOF to 6DOF perfectly fits into the most state-of-the-art projects and applications in the field of motion simulation.
+                        </p>
+                        <br><br>
+    
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row align-items-center">
+    
+                <div class="col-lg-5 order-lg-first order-2">
+                    <div>
+                        <h1>MOTION COCKPIT 3DOF</h1>
+                        <p>
+                            The 3DOF is an designed for pro racing car simulation, dedicated to both drivers training and sim racing enthusiasts. 
+                            The motion system based on world’s fastest linear actuator’s technology provides incredible levels of vehicle feedback to the driver. 
+                            This motion platform is suitable for Rally, GT and F1 simulations, also the small footprint and lightweight design allow to fit the machine to every racing room.
+                        </p>
+                    </div>
+                    
+                    
+                </div>
+                <div class="col-lg-5 order-lg-last order-1">
+                    <div class=" reveal fade-right">
+                        <img src="https://media.discordapp.net/attachments/757075637226700930/1117710100224815166/White_3-Dof_Brochure_V2.jpg?width=1056&height=936" alt="3DOF.png">
+                    </div>
+                </div>
+    
+                <div class="col-lg-1"></div>
+    
+            </div>
+    
+        </div>
+    
+
+    </div>
+
+    <script src="../javascript/script.js"></script>
+
+    
+</body>
+</html>
